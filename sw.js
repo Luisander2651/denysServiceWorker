@@ -3,7 +3,7 @@ self.addEventListener('install', event => {
     self.skipWaiting();
 
     event.waitUntil(
-        caches.open('v1')
+        caches.open('v2')
             .then(cache => {
                 cache.addAll([
                     './', // the index.html

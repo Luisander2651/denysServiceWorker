@@ -1,4 +1,3 @@
-/* script.js */
 let registration = null;
 
 function register_service_worker() {
@@ -15,18 +14,18 @@ function register_service_worker() {
     }
 }
 
-register_service_worker();
 
-/* script.js */
 function unregister_service_worker() {
     navigator.serviceWorker.getRegistrations()
-        .then(registrations => {
-            registrations.forEach(registration => {
-                registration.unregister();
-                console.log("Service Worker ungregistered.");
-            })
+    .then(registrations => {
+        registrations.forEach(registration => {
+            registration.unregister();
+            console.log("Service Worker ungregistered.");
         })
-        .catch(err => {
-            console.log("Could not unregister service worker.");
-        });
+    })
+    .catch(err => {
+        console.log("Could not unregister service worker.");
+    });
 }
+
+register_service_worker();
